@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #92C430;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+.nav-links a {
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: white;
+}
+.contact-info {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+.contact-info a {
+    text-decoration: none;
+    color: black;
+}
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (min-width: 769px) {
+    .nav-container {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    .nav-links, .contact-info {
+        display: none;
+    }
+    .nav-container {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #92C430;
+        padding: 10px 0;
+        align-items: center;
+    }
+    .nav-container.active {
+        display: flex;
+    }
+    .nav-container .nav-links,
+    .nav-container .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <!-- ステッキヘッダー -->
+        <div class="logo">株式会社 WTS</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav class="nav-links">
+            <a href="./index.html">ホーム</a>
+            <a href="wts-about.html">私たちについて</a>
+            <a href="./wts-contents.html">業務内容</a>
+            <a href="./wts-inquiry.html">お問い合わせ</a>
+        </nav>
+        <div class="contact-info">
+            <a href="tel:1234567890">📞 080-5627-3879</a>
+            <a href="mailto:example@example.com">✉️ wtstradiorer@gmail.com</a>
+        </div>
+    </header>
+    <!-- ハンバーガーメニュー -->
+    <div class="nav-container">
+        <nav class="nav-links">
+            <a href="./index.html">ホーム</a>
+            <a href="./wts-about.html">私たちについて</a>
+            <a href="./wts-contents.html">業務内容</a>
+            <a href="./wts-inquiry.html">お問い合わせ</a>
+        </nav>
+        <div class="contact-info">
+            <a href="tel:1234567890">📞 電話番号</a>
+            <a href="mailto:example@example.com">✉ メールアドレス</a>
+        </div>
+    </div>
+    </header>
+
+
+    <script>
+        function toggleMenu() {
+            const navContainer = document.querySelector('.nav-container');
+            navContainer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

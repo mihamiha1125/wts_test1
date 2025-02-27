@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #92C430;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+.nav-links a {
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: white;
+}
+.contact-info {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+.contact-info a {
+    text-decoration: none;
+    color: black;
+}
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (min-width: 769px) {
+    .nav-container {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    .nav-links, .contact-info {
+        display: none;
+    }
+    .nav-container {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #92C430;
+        padding: 10px 0;
+        align-items: center;
+        z-index: 3;
+    }
+    .nav-container.active {
+        display: flex;
+    }
+    .nav-container .nav-links,
+    .nav-container .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+.header_img {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 画面全体の高さ */
+    background: url('../image/伝統工芸\　フリー.jpg') no-repeat center center/cover; /* ここに画像を設定 */
+    z-index: -1;
+}
+.header-text {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    color: white;
+    font-size: 75px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+/* ↓WTSの取り組みについて */
+.about_attempt {
+    text-align: center;
+}
+.about_attempt-tex {
+    margin: 3% 0 2% 0;
+}
+.about_attempt h3 {
+    font-size: 30px;
+}
+.about_attempt-tex p {
+    font-size: 20px;
+}
+.about_attempt hr {
+    width: 10%;
+    margin: 10px auto;
+}
+/* ↓flexboxについて */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+}
+
+.container_btn_tex p {
+    font-size: 30px;
+    margin: 3%;
+}
+.about_attempt a {
+    text-decoration: none;
+    padding: 15px;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+    background: rgb(27, 32, 182);
+    color: white;
+}
+
+.business-item {
+    width: calc(50% - 40px);
+    text-align: center;
+}
+.business-item img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+.business-item p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+@media (max-width: 600px) {
+    .business-item {
+        width: 100%;
+    }
+}
+
+
+
+.about_thought {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    overflow: hidden;
+}
+.thought-item {
+    font-size: 24px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.thought-item:nth-child(1) {
+    align-self: flex-start;
+}
+.thought-item:nth-child(2) {
+    align-self: center;
+}
+.thought-item:nth-child(3) {
+    align-self: flex-end;
+}
+.thought-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* お問い合わせ */
+.contact-page {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;  /* 横方向の中央揃え */
+    align-items: center;      /* 縦方向の中央揃え */
+    margin: 0;                /* ページの余白をゼロにする */
+}
+.contact-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70vh;
+    text-align: center;
+}
+.contact-input, .contact-textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.contact-button:hover {
+    background-color: #0056b3;
+}
