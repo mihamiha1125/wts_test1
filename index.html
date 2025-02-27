@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社 WTS</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <!-- ステッキヘッダー -->
+        <div class="logo">株式会社 WTS</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav class="nav-links">
+            <a href="./index.html">ホーム</a>
+            <a href="wts-about.html">私たちについて</a>
+            <a href="./wts-contents.html">業務内容</a>
+            <a href="./wts-inquiry.html">お問い合わせ</a>
+        </nav>
+        <div class="contact-info">
+            <a href="tel:08056273879">📞 080-5627-3879</a>
+            <a href="wtstradiorer@gmail.com">✉️ wtstradiorer@gmail.com</a>
+        </div>
+    </header>
+    <!-- ハンバーガーメニュー -->
+    <div class="nav-container">
+        <nav class="nav-links">
+            <a href="./index.html">ホーム</a>
+            <a href="./wts-about.html">私たちについて</a>
+            <a href="./wts-contents.html">業務内容</a>
+            <a href="./wts-inquiry.html">お問い合わせ</a>
+        </nav>
+        <div class="contact-info">
+            <a href="tel:08056273879">📞 電話番号</a>
+            <a href="wtstradiorer@gmail.com">✉ メールアドレス</a>
+        </div>
+    </div>
+    <div class="header_img">
+        <div class="header-text">職人に寄り添う戦略パートナー</div>
+        <!-- 画像を差し替える場合は、.header の background プロパティを変更してください -->
+    </div>
+    <!-- /.header-img -->
+
+    <main>
+        <div class="about_attempt">
+            <div class="about_attempt-tex">
+                <h3>WTSの取り組み</h3>
+                <hr color="red">
+                <p>弊社は伝統工芸に特化し、以下のホームページ制作、SNS運用事業、ECサイト運営事業、イベント企画事業を行っております。</p>
+
+            </div>
+            <!-- /.about-attempt-tex -->
+
+            <!-- ここに画像と事業名を書く。flexでまとめて、コピペでよし。 -->
+            <div class="container">
+                <div class="business-item">
+                    <img src="./image/伝統工芸　フリー.jpg" alt="ホームページ制作事業">
+                    <p>ホームページ制作事業</p>
+                </div>
+                <div class="business-item">
+                    <img src="./image/伝統工芸　フリー.jpg" alt="SNS運用事業">
+                    <p>SNS運用事業</p>
+                </div>
+                <div class="business-item">
+                    <img src="./image/伝統工芸　フリー.jpg" alt="ECサイト運営事業">
+                    <p>ECサイト運営事業</p>
+                </div>
+                <div class="business-item">
+                    <img src="./image/伝統工芸　フリー.jpg" alt="イベント企画事業">
+                    <p>イベント企画事業</p>
+                </div>
+            </div>
+
+            <div class="container_btn_tex">
+                <p>今後も様々の事業を展開予定でございます。<br>詳しくは下記のボタンより事業内容をご確認ください。</p>
+                <a href="#services">業務内容について</a>
+            </div>
+            <!-- /.container_btn_tex -->
+        </div>
+        <!-- /.about_attempt -->
+
+        <div class="about_thought">
+                <div class="thought-item">MISSION<br>「日本の伝統工芸を再生し、現代の生活に取り入れる」</div>
+                <div class="thought-item">VISION<br>「職人に寄り添い、共に創る」</div>
+                <div class="thought-item">VALUE<br>「Z世代と職人の橋渡し」</div>
+        </div>
+    </main>
+    <div class="contact-page">
+        <div class="contact-container">
+            <h2>お問い合わせ</h2>
+            <form id="contactForm">
+                <input type="text" id="name" name="name" class="contact-input" placeholder="お名前" required>
+                <input type="tel" id="phone" name="phone" class="contact-input" placeholder="電話番号">
+                <input type="email" id="email" name="email" class="contact-input" placeholder="メールアドレス" required>
+                <textarea id="message" name="message" class="contact-textarea" placeholder="お問い合わせ内容" rows="5" required></textarea>
+                <button type="submit" class="contact-button">送信</button>
+            </form>
+            <p id="resultMessage"></p>
+        </div>
+        </div>
+    <footer>
+
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navContainer = document.querySelector('.nav-container');
+            navContainer.classList.toggle('active');
+        }
+
+        // スライドイン
+        document.addEventListener("DOMContentLoaded", function() {
+            const thoughtItems = document.querySelectorAll(".thought-item");
+            thoughtItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add("show");
+                }, index * 500);
+            });
+        });
+
+
+        // お問い合わせ
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            };
+
+            // ★ ここに送信先のメール処理を追加（例: Formspree や EmailJS などを使用） ★
+            console.log("送信データ:", formData);
+            
+            document.getElementById("resultMessage").innerText = "お問い合わせを送信しました。";
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+</body>
+</html>
