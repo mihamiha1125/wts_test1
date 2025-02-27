@@ -226,3 +226,28 @@ header {
 .contact-button:hover {
     background-color: #0056b3;
 }
+
+/* レスポンシブデザインのためのCSS */
+@media (max-width: 768px) {
+
+}
+@media (max-width: 500px) {
+    .header-text {
+        font-size: 20px;
+    }
+    .about_attempt-tex p {
+        font-size: 15px;
+    }
+    .container_btn_tex p {
+        font-size: 20px;
+    }
+    .thought-item:nth-child(3) {
+        align-self: center;
+    }
+}
+@media (max-width: 768px) {
+    
+}
+@media (max-width: 768px) {
+    
+}
