@@ -232,6 +232,9 @@ header {
 
 }
 @media (max-width: 500px) {
+    .header_img {
+        height:50vh;
+    }
     .header-text {
         font-size: 20px;
     }
