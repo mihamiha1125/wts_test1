@@ -10,19 +10,20 @@ body {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     background: #92C430;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    height: 100%;
+    z-index: 1000;
 }
 .logo {
     font-weight: bold;
-    font-size: 30px;
 }
 .nav-links {
     display: flex;
@@ -37,8 +38,7 @@ header {
 }
 .contact-info {
     display: flex;
-    gap: 15px;
-    font-size: 20px;
+    gap: 10px;
 }
 .contact-info a {
     text-decoration: none;
@@ -49,10 +49,27 @@ header {
     font-size: 24px;
     cursor: pointer;
 }
-@media (min-width: 769px) {
-    .nav-container {
-        display: none;
-    }
+.nav-container {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #92C430;
+    flex-direction: column;
+    padding: 10px 0;
+    align-items: center;
+    z-index: 999;
+}
+.nav-container.active {
+    display: flex;
+}
+.nav-container .nav-links,
+.nav-container .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 @media (max-width: 768px) {
     .menu-icon {
@@ -60,25 +77,6 @@ header {
     }
     .nav-links, .contact-info {
         display: none;
-    }
-    .nav-container {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        background: #92C430;
-        padding: 10px 0;
-        align-items: center;
-        z-index: 3;
-    }
-    .nav-container.active {
-        display: flex;
-    }
-    .nav-container .nav-links,
-    .nav-container .contact-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
     }
 }
 .header_img {
@@ -177,6 +175,9 @@ header {
     text-align: center;
     margin-bottom: 40px;
 }
+.sp_br {
+    display: none;
+}
 .thought-item:nth-child(1) {
     align-self: flex-start;
 }
@@ -233,16 +234,32 @@ header {
 }
 @media (max-width: 500px) {
     .header_img {
-        height:50vh;
+        height: 50vh;
     }
     .header-text {
         font-size: 20px;
     }
     .about_attempt-tex p {
         font-size: 15px;
+        margin: 0 5%;
     }
     .container_btn_tex p {
-        font-size: 20px;
+        font-size: 15px;
+    }
+    .container_btn_tex a {
+        padding: 10px;
+    }
+    .about_thought {
+        margin: 10% 0;;
+    }
+    .sp_br {
+        display: block;
+    }
+    .thought-item:nth-child(1) {
+        align-self: center;
+    }
+    .thought-item:nth-child(2) {
+        align-self: center;
     }
     .thought-item:nth-child(3) {
         align-self: center;
