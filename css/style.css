@@ -477,6 +477,9 @@ textarea.c-form__input {
     .thought-item:nth-child(3) {
         align-self: center;
     }
+	.c-form {
+        max-width: 80%;
+    }
 }
 @media (max-width: 768px) {
     
