@@ -115,7 +115,8 @@
             <p style="text-align: center; margin: 40px auto">
                 お問い合わせ
             </p>
-            <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTQnwSr2o3q5AFNsw1Y7Tzlk1FTFFt9tGanOyjTrZmCfvyow/formResponse" method="POST">
+            <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTQnwSr2o3q5AFNsw1Y7Tzlk1FTFFt9tGanOyjTrZmCfvyow/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;"
+            >
                 <div class="c-form__item">
                     <label class="c-form__label" for="field-name"
                         >お名前<span class="c-form__required">必須</span></label
@@ -162,12 +163,17 @@
                         class="c-form__input"
                         id="field-message"
                         placeholder="お問い合わせ内容"
+                        required="required"
                     ></textarea>
                 </div>
                 <div class="c-form__submit">
                     <button type="submit">送信する</button>
                 </div>
             </form>
+            <!-- // お問い合わせ -->
+            <script type="text/javascript">var submitted = false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thank.html';}"></iframe>
+
     </footer>
     <script>
         function toggleMenu() {
@@ -183,8 +189,7 @@
                     item.classList.add("show");
                 }, index * 500);
             });
-        });
-
+        })
     </script>
 </body>
 </html>
