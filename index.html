@@ -42,31 +42,17 @@
         <input type="checkbox" class="menu-btn" id="menu-btn">
         <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
         <ul class="menu">
-          <li class="top"><a href="./index.html">ホーム</a></li>
-          <li><a href="./wts-about.html">私たちについて</a></li>
-          <li><a href="./wts-contents.html">事業内容</a></li>
-          <li><a href="./wts-inquiry.html">お問い合わせ</a></li>
+          <a href="./index.html"><li class="top">ホーム</li></a>
+          <a href="./wts-about.html"><li>私たちについて</li></a>
+          <a href="./wts-contents.html"><li>事業内容</li></a>
+          <a href="./wts-inquiry.html"><li>お問い合わせ</li></a>
         </ul>
     </div>
 
-<!-- 
-    <div class="header">
-        <div class="navtext-container">
-          <div class="navtext">株式会社 WTS</div>
-        </div>
-        <input type="checkbox" class="menu-btn" id="menu-btn">
-        <label for="menu-btn" class="menu-icon2"><span class="navicon"></span></label>
-        <ul class="menu">
-          <li class="top"><a href="./index.html">ホーム</a></li>
-          <li><a href="./wts-about.html">私たちについて</a></li>
-          <li><a href="./wts-contents.html">業務内容</a></li>
-          <li><a href="./wts-inquiry.html">お問い合わせ</a></li>
-        </ul>
-    
-    </div> -->
     <div class="header_img">
         <!-- <div class="header-text">職人に寄り添う戦略パートナー</div> -->
         <!-- 画像を差し替える場合は、.header の background プロパティを変更してください -->
+         <img src="./image/S__5357646_0.jpg" alt="header">
     </div>
     <!-- /.header-img -->
 </header>
@@ -75,7 +61,7 @@
             <div class="about_attempt-tex">
                 <h3>WTSの取り組み</h3>
                 <hr color="red">
-                <p>弊社は伝統工芸に特化し、以下のマーケティング・サポート事業、自社EC運営事業、新ブランド立ち上げ事業、サポーター派遣事業を行っております。</p>
+                <p>弊社は伝統工芸に特化し、以下のマーケティング・サポート事業、自社EC運営事業、新ブランド立ち上げ事業を行っております。</p>
 
             </div>
             <!-- /.about-attempt-tex -->
@@ -127,17 +113,18 @@
     <footer>
         <div class="contact-page">
             <p style="text-align: center; margin: 40px auto">
-                お気軽にお問い合わせください。
+                お問い合わせ
             </p>
-            <form class="c-form">
+            <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTQnwSr2o3q5AFNsw1Y7Tzlk1FTFFt9tGanOyjTrZmCfvyow/formResponse" method="POST">
                 <div class="c-form__item">
                     <label class="c-form__label" for="field-name"
                         >お名前<span class="c-form__required">必須</span></label
                     >
                     <input
+                    name="enry.1900259291"
                         class="c-form__input"
                         id="field-name"
-                        placeholder="株式会社 山田"
+                        placeholder="お名前"
                         type="text"
                         required="required"
                     />
@@ -147,16 +134,31 @@
                         >メールアドレス<span class="c-form__required">必須</span></label
                     >
                     <input
+                    name="entry.1825740810"
                         class="c-form__input"
                         id="field-mail"
-                        placeholder="sample@gmail.com"
+                        placeholder="メールアドレス"
                         type="email"
+                        required="required"
+                    />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-mail"
+                        >メールアドレス<span class="c-form__required">必須</span></label
+                    >
+                    <input
+                    name="entry.14333313"
+                        class="c-form__input"
+                        id="field-mail"
+                        placeholder="電話番号"
+                        type="tel"
                         required="required"
                     />
                 </div>
                 <div class="c-form__item">
                     <label class="c-form__label" for="field-message">メッセージ内容<span class="c-form__required">必須</span></label>
                     <textarea
+                    name="entry.406145833"
                         class="c-form__input"
                         id="field-message"
                         placeholder="お問い合わせ内容"
