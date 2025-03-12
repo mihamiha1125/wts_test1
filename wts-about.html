@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,109 +16,267 @@ body {
     padding: 0;
 }
 
-header {
-    position: sticky;
+:root {
+    --background-navbar: rgba(55, 55, 55, 0.98);
+  }
+  
+  .header {
+    background: var(--background-navbar);
+    position: fixed;
+    width: 100%;
+    height: 52px;
+  }
+  
+  /* Nav items */
+  .menu {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
     top: 0;
-    background: #92C430;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    height: 100%;
-}
-.logo {
-    font-weight: bold;
-    font-size: 30px;
-}
-.nav-links {
-    display: flex;
-    gap: 15px;
-}
-.nav-links a {
+    margin-top: 52px;
+    padding: 0 0 10px 0;
+    clear: both;
+    background: var(--background-navbar);
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+    transform: scale(1, 0);
+    transform-origin: top;
+  }
+  
+  /* Hamburger menu button */
+  .menu-btn:checked ~ .menu {
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  
+  /* Hamburger menbu text */
+  .menu a {
     text-decoration: none;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background: white;
-}
-.contact-info {
-    display: flex;
-    gap: 15px;
-    font-size: 20px;
-}
-.contact-info a {
-    text-decoration: none;
-    color: black;
-}
-.menu-icon {
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ddd;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  
+  .menu li {
+    border-top: 1px solid rgb(75, 75, 75);
+    padding: 15px 0;
+    margin: 0 54px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  
+  .menu-btn:checked ~ .menu a,
+  .menu-btn:checked ~ .menu li {
+    opacity: 1;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+  }
+  
+  .menu-btn {
     display: none;
-    font-size: 24px;
+  }
+  
+  .menu-icon {
+    display: inline-block;
+    position: relative;
     cursor: pointer;
-}
-@media (min-width: 769px) {
-    .nav-container {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-    .nav-links, .contact-info {
-        display: none;
-    }
-    .nav-container {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        background: #92C430;
-        padding: 10px 0;
-        align-items: center;
-    }
-    .nav-container.active {
-        display: flex;
-    }
-    .nav-container .nav-links,
-    .nav-container .contact-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-}
+    padding: 24px 14px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .navicon {
+    background: #ddd;
+    display: block;
+    height: 3px;
+    width: 26px;
+    position: relative;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  
+  .navicon:before,
+  .navicon:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #ddd;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  
+  .navicon:before {
+    top: 9px;
+  }
+  
+  .navicon:after {
+    bottom: 9px;
+  }
+  
+  /* Hamburger Menu Animation Start */
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+    top: 0;
+  }
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    bottom: 0;
+  }
+  
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: rgba(0, 0, 0, 0);
+    transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  /* Hamburger Menu Animation End */
+  
+  /* Navbar Container */
+  .navtext-container {
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Navbar Text */
+  .navtext {
+    position: absolute;
+    text-transform: uppercase;
+    color: #ddd;
+    letter-spacing: 4px;
+    font-size: 20px;
+  }
+.container {
+            width: 80%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 50px 0;
+            position: relative;
+        }
+        .section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .text {
+            width: 60%;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .section:nth-child(odd) {
+            flex-direction: row;
+        }
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .curved-line {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: none;
+        }
+        .curved-line::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-left: 3px solid black;
+            border-bottom: 3px solid black;
+            border-radius: 100px;
+        }
+        @media (max-width: 1024px) {
+            .section:nth-child(1) {
+                flex-direction: row-reverse;
+            }
+        }
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .section:nth-child(odd) {
+            flex-direction: column;
+        }
+            .section:nth-child(even) {
+                flex-direction: column;
+            }
+            .text {
+                width: 100%;
+                text-align: center;
+            }
+            .curved-line {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-            <!-- ステッキヘッダー -->
-        <div class="logo">株式会社 WTS</div>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <nav class="nav-links">
-            <a href="./index.html">ホーム</a>
-            <a href="wts-about.html">私たちについて</a>
-            <a href="./wts-contents.html">業務内容</a>
-            <a href="./wts-inquiry.html">お問い合わせ</a>
-        </nav>
-        <div class="contact-info">
-            <a href="tel:1234567890">📞 080-5627-3879</a>
-            <a href="mailto:example@example.com">✉️ wtstradiorer@gmail.com</a>
+        <div class="header">
+            <div class="navtext-container">
+              <div class="navtext">株式会社 WTS</div>
+            </div>
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+            <ul class="menu">
+              <li class="top"><a href="./index.html">ホーム</a></li>
+              <li><a href="./wts-about.html">私たちについて</a></li>
+              <li><a href="./wts-contents.html">業務内容</a></li>
+              <li><a href="./wts-inquiry.html">お問い合わせ</a></li>
+            </ul>
         </div>
     </header>
-    <!-- ハンバーガーメニュー -->
-    <div class="nav-container">
-        <nav class="nav-links">
-            <a href="./index.html">ホーム</a>
-            <a href="./wts-about.html">私たちについて</a>
-            <a href="./wts-contents.html">業務内容</a>
-            <a href="./wts-inquiry.html">お問い合わせ</a>
-        </nav>
-        <div class="contact-info">
-            <a href="tel:1234567890">📞 電話番号</a>
-            <a href="mailto:example@example.com">✉ メールアドレス</a>
+    <main>
+        <div class="container">
+            <h1>私たちについて</h1>
+            <div class="section">
+                <img src="./image/伝統工芸フリー.jpg" alt="会社イメージ">
+                <div class="text">
+                    <h2>1. 会社の起源</h2>
+                    <p>私たちの会社は、日本の伝統工芸を守り、新たな形で現代に広めることを使命としています。</p>
+                </div>
+            </div>
+            <!-- <div class="curved-line"></div> -->
+            <div class="section">
+                <img src="./image/伝統工芸フリー.jpg" alt="歴史">
+                <div class="text">
+                    <h2>2. 事業のきっかけ</h2>
+                    <p>伝統工芸が廃れつつある現状を目の当たりにし、その価値を未来へつなげるためにこの事業を始めました。</p>
+                </div>
+            </div>
+            <!-- <div class="curved-line"></div> -->
+            <div class="section">
+                <img src="./image/伝統工芸フリー.jpg" alt="未来の展望">
+                <div class="text">
+                    <h2>3. 今後の展望</h2>
+                    <p>伝統と革新を融合させ、より多くの人々に伝統工芸の魅力を届けることを目指します。これからも応援よろしくお願いいたします。</p>
+                </div>
+            </div>
         </div>
-    </div>
-    </header>
+    </main>
 
 
     <script>
