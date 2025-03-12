@@ -9,7 +9,7 @@ body {
     padding: 0;
 }
 
-header {
+/* header {
     position: fixed;
     top: 0;
     left: 0;
@@ -21,8 +21,8 @@ header {
     align-items: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-}
-.logo {
+} */
+/* .logo {
     font-weight: bold;
 }
 .nav-links {
@@ -70,20 +70,182 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-}
-@media (max-width: 768px) {
+} */
+/* @media (max-width: 768px) {
     .menu-icon {
         display: block;
     }
     .nav-links, .contact-info {
         display: none;
     }
-}
+} */
+
+
+
+/* Navbar & Navmenu color */
+:root {
+    --background-navbar: rgba(55, 55, 55, 0.98);
+  }
+  
+  .header {
+    background: var(--background-navbar);
+    position: fixed;
+    width: 100%;
+    height: 52px;
+  }
+  
+  /* Nav items */
+  .menu {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-top: 52px;
+    padding: 0 0 10px 0;
+    clear: both;
+    background: var(--background-navbar);
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+    transform: scale(1, 0);
+    transform-origin: top;
+  }
+  
+  /* Hamburger menu button */
+  .menu-btn:checked ~ .menu {
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  
+  /* Hamburger menbu text */
+  .menu a {
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ddd;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  
+  .menu li {
+    border-top: 1px solid rgb(75, 75, 75);
+    padding: 15px 0;
+    margin: 0 54px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  
+  .menu-btn:checked ~ .menu a,
+  .menu-btn:checked ~ .menu li {
+    opacity: 1;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+  }
+  
+  .menu-btn {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding: 24px 14px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .navicon {
+    background: #ddd;
+    display: block;
+    height: 3px;
+    width: 26px;
+    position: relative;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  
+  .navicon:before,
+  .navicon:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #ddd;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  
+  .navicon:before {
+    top: 9px;
+  }
+  
+  .navicon:after {
+    bottom: 9px;
+  }
+  
+  /* Hamburger Menu Animation Start */
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+    top: 0;
+  }
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    bottom: 0;
+  }
+  
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: rgba(0, 0, 0, 0);
+    transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  /* Hamburger Menu Animation End */
+  
+  /* Navbar Container */
+  .navtext-container {
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Navbar Text */
+  .navtext {
+    position: absolute;
+    text-transform: uppercase;
+    color: #ddd;
+    letter-spacing: 4px;
+    font-size: 20px;
+  }
+  /* @media screen and (min-width: 769px) {
+    
+  }
+  @media (max-width: 768px) {
+    .header {
+        display: block;
+    }
+    .logo, .nav-icon, .contact-info, .nav-links{
+        display: none;
+    }
+    header {
+        background-color: #00000000;
+    }
+} */
+
+
+
 .header_img {
     position: relative;
     width: 100%;
-    height: 100vh; /* 画面全体の高さ */
-    background: url('../image/伝統工芸フリー.jpg') no-repeat center center/cover; /* ここに画像を設定 */
+    height: 80vh; /* 画面全体の高さ */
+    background: url('../image/S__5357646_0.jpg') no-repeat center center/cover; /* ここに画像を設定 */
     z-index: -1;
 }
 .header-text {
@@ -131,12 +293,9 @@ header {
     margin: 3%;
 }
 .about_attempt a {
-    text-decoration: none;
-    padding: 15px;
+
     /* border: 1px solid #000; */
     border-radius: 5px;
-    background: rgb(27, 32, 182);
-    color: white;
 }
 
 .business-item {
@@ -159,7 +318,14 @@ header {
 }
 
 
-
+.about_thought_tex {
+    font-size: 30px;
+    text-align: center;
+}
+.about_thought_tex hr {
+    width: 10%;
+    margin: 10px auto;
+}
 .about_thought {
     display: flex;
     flex-direction: column;
@@ -193,39 +359,71 @@ header {
 }
 
 /* お問い合わせ */
-.contact-page {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;  /* 横方向の中央揃え */
-    align-items: center;      /* 縦方向の中央揃え */
-    margin: 0;                /* ページの余白をゼロにする */
+.c-form {
+	max-width: 600px;
+	margin: 0 auto;
 }
-.contact-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 70vh;
-    text-align: center;
+.c-form__item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-bottom: 20px;
 }
-.contact-input, .contact-textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.c-form__label,
+.c-form__input {
+	padding: 10px;
 }
-.contact-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+.c-form__label {
+	width: 90%;
 }
-.contact-button:hover {
-    background-color: #0056b3;
+.c-form__input {
+	width: 90%;
+	font-size: 16px;
+	border: solid 1px #333;
+	border-radius: 4px;
+}
+.c-form__input:focus-visible {
+	outline: green auto 1px;
+}
+.c-form__required {
+	color: #fff;
+	background-color: green;
+	border-radius: 4px;
+	padding: 5px 5px;
+	margin: 0 0 0 18px;
+}
+textarea.c-form__input {
+	height: 160px;
+}
+.c-form__submit {
+	text-align: center;
+}
+.c-form__submit button {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background-color: green;
+	border: solid 1px green;
+	border-radius: 4px;
+	padding: 5px 32px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.c-form__submit button:hover {
+	color: green;
+	background-color: transparent;
+}
+
+@media (min-width: 640px) {
+	.c-form__item {
+		flex-wrap: nowrap;
+	}
+	.c-form__label {
+		width: 40%;
+	}
+	.c-form__input {
+		width: 55%;
+	}
 }
 
 /* レスポンシブデザインのためのCSS */
