@@ -82,7 +82,10 @@ body {
   
   .menu-icon {
     display: inline-block;
-    position: relative;
+    position: absolute;
+    right: 14px; /* 右端に移動 */
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     padding: 24px 14px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -157,6 +160,9 @@ body {
     letter-spacing: 4px;
     font-size: 20px;
   }
+
+
+
 .container {
             width: 80%;
             max-width: 1000px;
@@ -164,6 +170,7 @@ body {
             padding: 50px 0;
             text-align: center;
             position: relative;
+            z-index: -1;
         }
         .section {
             display: flex;
@@ -242,11 +249,11 @@ body {
             <input type="checkbox" class="menu-btn" id="menu-btn">
             <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
             <ul class="menu">
-              <li class="top"><a href="./index.html">ホーム</a></li>
-              <li><a href="./wts-about.html">私たちについて</a></li>
-              <li><a href="./wts-contents.html">事業内容</a></li>
-              <li><a href="./wts-inquiry.html">お問い合わせ</a></li>
-            </ul>
+                <a href="./index.html"><li class="top">ホーム</li></a>
+                <a href="./wts-about.html"><li>私たちについて</li></a>
+                <a href="./wts-contents.html"><li>事業内容</li></a>
+                <a href="./wts-inquiry.html"><li>お問い合わせ</li></a>
+              </ul>
         </div>
     </header>
     <main>
@@ -278,7 +285,10 @@ body {
         </div>
     </main>
 
-
+<footer>
+    <!-- コピーライト -->
+    <p style="text-align: center; font-size: 15px; margin: 2%;">Copyright &copy; WTS INC. All rights reserved.</p>
+</footer>
     <script>
         function toggleMenu() {
             const navContainer = document.querySelector('.nav-container');
