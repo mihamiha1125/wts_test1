@@ -370,9 +370,6 @@ body {
 }
 
 /* お問い合わせ */
-.contact-page p {
-    font-size: 30px;
-}
 .c-form {
 	max-width: 50%;
 	margin: 0 auto;
@@ -477,7 +474,7 @@ textarea.c-form__input {
     .thought-item:nth-child(3) {
         align-self: center;
     }
-	.c-form {
+    .c-form {
         max-width: 80%;
     }
 }
