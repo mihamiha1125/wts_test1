@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社 WTS</title>
+        <!-- スリックJS css-->
+        <link rel="stylesheet" href="./css/slick.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -53,6 +55,11 @@
         <!-- <div class="header-text">職人に寄り添う戦略パートナー</div> -->
         <!-- 画像を差し替える場合は、.header の background プロパティを変更してください -->
          <img src="./image/S__5357646_0.jpg" alt="header">
+         <!-- <ul class="slick01">
+            <li><img alt="画像1" src="./image/S__5357642_0.jpg" /></li>
+            <li><img alt="画像2" src="./image/S__5357644_0.jpg" /></li>
+            <li><img alt="画像3" src="./image/S__5357645_0.jpg" /></li>
+          </ul> -->
     </div>
     <!-- /.header-img -->
 </header>
@@ -112,7 +119,7 @@
 
     <footer>
         <div class="contact-page">
-            <p style="text-align: center; margin: 40px auto">
+            <p style="text-align: center; margin: 40px auto; font-size: 30px;">
                 お問い合わせ
             </p>
             <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTQnwSr2o3q5AFNsw1Y7Tzlk1FTFFt9tGanOyjTrZmCfvyow/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;"
@@ -170,26 +177,16 @@
                     <button type="submit">送信する</button>
                 </div>
             </form>
+
+            <!-- コピーライト -->
+             <p style="text-align: center; font-size: 15px; margin: 2%;">Copyright &copy; WTS INC. All rights reserved.</p>
+
+            </div>
             <!-- // お問い合わせ -->
             <script type="text/javascript">var submitted = false;</script>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thank.html';}"></iframe>
-
     </footer>
-    <script>
-        function toggleMenu() {
-            const navContainer = document.querySelector('.nav-container');
-            navContainer.classList.toggle('active');
-        }
-
-        // スライドイン
-        document.addEventListener("DOMContentLoaded", function() {
-            const thoughtItems = document.querySelectorAll(".thought-item");
-            thoughtItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.classList.add("show");
-                }, index * 500);
-            });
-        })
-    </script>
+    <script trpe="text/javascript" src="./js/slick.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
