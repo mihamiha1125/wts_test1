@@ -17,6 +17,7 @@ body {
 }
 :root {
     --background-navbar: rgba(55, 55, 55, 0.98);
+    
   }
   
   .header {
@@ -81,7 +82,10 @@ body {
   
   .menu-icon {
     display: inline-block;
-    position: relative;
+    position: absolute;
+    right: 14px; /* 右端に移動 */
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     padding: 24px 14px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -157,6 +161,75 @@ body {
     font-size: 20px;
   }
 
+
+  /* お問い合わせ */
+.c-form {
+	max-width: 50%;
+	margin: 0 auto;
+}
+.c-form__item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-bottom: 20px;
+}
+.c-form__label,
+.c-form__input {
+	padding: 10px;
+}
+.c-form__label {
+	width: 90%;
+    text-align: center;
+}
+.c-form__input {
+	width: 90%;
+	font-size: 16px;
+	border: solid 1px #333;
+	border-radius: 4px;
+}
+.c-form__input:focus-visible {
+	outline: green auto 1px;
+}
+.c-form__required {
+	color: #fff;
+	background-color: green;
+	border-radius: 4px;
+	padding: 5px 5px;
+	margin: 0 0 0 18px;
+}
+textarea.c-form__input {
+	height: 160px;
+}
+.c-form__submit {
+	text-align: center;
+}
+.c-form__submit button {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background-color: green;
+	border: solid 1px green;
+	border-radius: 4px;
+	padding: 5px 32px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.c-form__submit button:hover {
+	color: green;
+	background-color: transparent;
+}
+
+@media (min-width: 640px) {
+	.c-form__item {
+		flex-wrap: nowrap;
+	}
+	.c-form__label {
+		width: 40%;
+	}
+	.c-form__input {
+		width: 55%;
+	}
+}
     </style>
 </head>
 <body>
@@ -168,16 +241,82 @@ body {
             <input type="checkbox" class="menu-btn" id="menu-btn">
             <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
             <ul class="menu">
-              <li class="top"><a href="./index.html">ホーム</a></li>
-              <li><a href="./wts-about.html">私たちについて</a></li>
-              <li><a href="./wts-contents.html">事業内容</a></li>
-              <li><a href="./wts-inquiry.html">お問い合わせ</a></li>
-            </ul>
+                <a href="./index.html"><li class="top">ホーム</li></a>
+                <a href="./wts-about.html"><li>私たちについて</li></a>
+                <a href="./wts-contents.html"><li>事業内容</li></a>
+                <a href="./wts-inquiry.html"><li>お問い合わせ</li></a>
+              </ul>
         </div>
-    
     </header>
 
+<main>
+    <div class="contact-page">
+        <h1 style="text-align: center;  font-size: 40px; padding: 4%;">
+            お問い合わせ
+        </h1>
+        <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTQnwSr2o3q5AFNsw1Y7Tzlk1FTFFt9tGanOyjTrZmCfvyow/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;"
+        >
+            <div class="c-form__item">
+                <label class="c-form__label" for="field-name"
+                    >お名前<span class="c-form__required">必須</span></label
+                >
+                <input
+                name="entry.1900259291"
+                    class="c-form__input"
+                    id="field-name"
+                    placeholder="お名前"
+                    type="text"
+                    required="required"
+                />
+            </div>
+            <div class="c-form__item">
+                <label class="c-form__label" for="field-mail"
+                    >メールアドレス<span class="c-form__required">必須</span></label
+                >
+                <input
+                name="entry.1825740810"
+                    class="c-form__input"
+                    id="field-mail"
+                    placeholder="メールアドレス"
+                    type="email"
+                    required="required"
+                />
+            </div>
+            <div class="c-form__item">
+                <label class="c-form__label" for="field-mail"
+                    >電話番号<span class="c-form__required">必須</span></label
+                >
+                <input
+                name="entry.14333313"
+                    class="c-form__input"
+                    id="field-mail"
+                    placeholder="電話番号"
+                    type="tel"
+                    required="required"
+                />
+            </div>
+            <div class="c-form__item">
+                <label class="c-form__label" for="field-message">メッセージ内容<span class="c-form__required">必須</span></label>
+                <textarea
+                name="entry.406145833"
+                    class="c-form__input"
+                    id="field-message"
+                    placeholder="お問い合わせ内容"
+                    required="required"
+                ></textarea>
+            </div>
+            <div class="c-form__submit">
+                <button type="submit">送信する</button>
+            </div>
+        </form>
+        <script type="text/javascript">var submitted = false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thank.html';}"></iframe>
+</main>
+<footer>
 
+    <!-- コピーライト -->
+    <p style="text-align: center; font-size: 15px; margin: 2%;">Copyright &copy; WTS INC. All rights reserved.</p>
+</footer>
     <script>
         function toggleMenu() {
             const navContainer = document.querySelector('.nav-container');
