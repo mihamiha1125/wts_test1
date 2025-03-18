@@ -7,7 +7,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ebe3d0;
+    background-color: #ecdebd;
 }
 
 /* header {
@@ -245,42 +245,84 @@ body {
 
 
 
+/* スライドショー */
 .header_img {
     position: relative;
     width: 100%;
-    height: 80vh; /* 画面全体の高さ */
-    /* background: url('../image/S__5357646_0.jpg') no-repeat center center/cover; ここに画像を設定 */
+    height: 95vh;
+    overflow: hidden;
     z-index: -1;
 }
-.header_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+
+.slick-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
 }
-.header-text {
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
-    color: white;
-    font-size: 75px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px 25px;
-    border-radius: 8px;
+
+.slick-slider div {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slick-slider img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* 私たちについて */
+.about {
+    position: relative;
+    z-index: -1;
+    padding: 75px 0;
     text-align: center;
+    font-size: 1.5rem;
+    line-height: 2;
+    margin: 5% 0;
+}
+.sp_br {
+    display: none;
+}
+
+/* 企業情報 */
+.company_wrap {
+    text-align: center;
+    margin: 5% 0;
+}
+.company_wrap h2 {
+    font-size: 40px;
+}
+.company_wrap p {
+    font-size: 20px;
+}
+/* 企業情報ボタン */
+.company-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #302ade;
+    border: 2px solid #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.company-button:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
 }
 
 
 /* ↓WTSの取り組みについて */
 .about_attempt {
     text-align: center;
+    margin: 10% 0;
 }
-.about_attempt-tex {
-    margin: 3% 0 2% 0;
-}
-.about_attempt h3 {
-    font-size: 30px;
+.about_attempt h2 {
+    font-size: 40px;
 }
 .about_attempt-tex p {
     font-size: 20px;
@@ -309,11 +351,11 @@ body {
 }
 
 .business-item {
-    width: calc(50% - 40px);
+    width: calc(33% - 40px);
     text-align: center;
 }
 .business-item img {
-    width: 80%;
+    width: 90%;
     height: auto;
     border-radius: 10px;
 }
@@ -328,10 +370,18 @@ body {
 }
 
 
-.about_thought_tex {
-    font-size: 30px;
+
+.about-thought-wrap {
+    margin: 5% 0;
     text-align: center;
 }
+.about-thought-wrap h2 {
+    font-size: 40px;
+}
+.about-thought-wrap p {
+    font-size: 20px;
+}
+
 .about_thought_tex hr {
     width: 10%;
     margin: 10px auto;
@@ -347,10 +397,11 @@ body {
     font-size: 24px;
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 3s ease-out, transform 3s ease-out;
     text-align: center;
     margin-bottom: 40px;
     z-index: -1;
+    padding: 0 10%;
 }
 .sp_br {
     display: none;
@@ -369,8 +420,96 @@ body {
     transform: translateX(0);
 }
 
+/* メッセージ */
+.about-message-wrap {
+    margin: 5% 0;
+    text-align: center;
+}
+.about-message-ttl h2 {
+    font-size: 40px;
+}
+.about-message-ttl p {
+    font-size: 20px;
+}
+.about-message {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+}
+.about-item {
+    width: calc(50% - 40px);
+    text-align: center;
+}
+.about-item img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
 /* お問い合わせ */
-.c-form {
+
+.contact-page {
+    text-align: center;
+    background-image: url(../image/お問い合わせ背景.png);
+    background-size: cover;
+    color: #fff;
+    padding: 2%;
+}
+
+.contact-page-top {
+    padding: 20px;
+}
+.contact-page-top h2 {
+    font-size: 40px;
+}
+.contact-page-top p {
+    font-size: 20px;
+}
+.contact_flex {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    margin: 20px 0;
+    font-size: 20px;
+}
+.contact_flex h3 {
+    width: 100%;
+}
+.contact_flex1 a{
+    text-decoration: none;
+    color: #fff;
+    padding: 2%;
+}
+.contact_flex2 {
+    text-align: center;
+}
+
+
+/* お問い合わせボタン */
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #fff;
+    color: #3ddcaa;
+}
+
+
+/* ↓お問い合わせフォーム */
+/* .c-form {
 	max-width: 50%;
 	margin: 0 auto;
 }
@@ -436,11 +575,19 @@ textarea.c-form__input {
 	.c-form__input {
 		width: 55%;
 	}
-}
+} */
 
 /* レスポンシブデザインのためのCSS */
 @media (max-width: 768px) {
-
+    .sp_br {
+        display: none;
+    }
+    .about {
+        font-size: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 15px;
+    }
 }
 @media (max-width: 500px) {
     .header_img {
@@ -461,9 +608,6 @@ textarea.c-form__input {
     }
     .about_thought {
         margin: 10% 0;;
-    }
-    .sp_br {
-        display: block;
     }
     .thought-item:nth-child(1) {
         align-self: center;
