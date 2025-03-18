@@ -52,36 +52,80 @@
     </div>
 
     <div class="header_img">
-        <!-- <div class="header-text">職人に寄り添う戦略パートナー</div> -->
-        <!-- 画像を差し替える場合は、.header の background プロパティを変更してください -->
-         <img src="./image/S__5357646_0.jpg" alt="header">
-         <!-- <ul class="slick01">
-            <li><img alt="画像1" src="./image/S__5357642_0.jpg" /></li>
-            <li><img alt="画像2" src="./image/S__5357644_0.jpg" /></li>
-            <li><img alt="画像3" src="./image/S__5357645_0.jpg" /></li>
-          </ul> -->
+        <div class="slick-slider">
+            <div>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="./image/S__5357646_0_small.jpg">
+                    <img src="./image/IMG_8167.jpg" alt="header1">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="./image/S__5357642_0_small.jpg">
+                    <img src="./image/IMG_8116.jpg" alt="header2">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="./image/S__5357644_0_small.jpg">
+                    <img src="./image/IMG_8132.jpg" alt="header3">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="./image/S__5357645_0_small.jpg">
+                    <img src="./image/IMG_8148.jpg" alt="header4">
+                </picture>
+            </div>
+        </div>
     </div>
     <!-- /.header-img -->
 </header>
     <main>
+        <div class="about">
+            <p>私たちは、作家や職人の作品を深く理解し、
+                <br class="sp_br">リスペクトしながら課題を共に解決します。</p>
+                <br>
+                <p>伝統工芸品の本質的な魅力引き出し、
+                    <br class="sp_br">効率的な売り方や魅せ方 を提案します。</p>
+                <br>
+                <p>モダンイノベーションだけでなく、
+                <br class="sp_br">”伝統”としての価値を生かし、
+                <br>次世代へ繋げるビジネスを展開します。</p>
+        </div>
+        <!-- /.about -->
+
+        <!-- 企業情報 -->
+         <div class="company_wrap">
+            <img src="./image/icons8-会社-50.png" alt="会社マーク">
+            <h2>企業情報</h2>
+            <p>Company</p>
+            <a href="企業情報ページのURL" class="company-button">企業情報ページへ →</a>
+         </div>
+         <!-- /.company_wrap -->
+
         <div class="about_attempt">
             <div class="about_attempt-tex">
-                <h3>WTSの取り組み</h3>
-                <hr color="red">
-                <p>弊社は伝統工芸に特化し、以下のマーケティング・サポート事業、自社EC運営事業、新ブランド立ち上げ事業を行っております。</p>
-
+                <img src="./image/icons8-ビジネス目標-50.png" alt="事業紹介">
+                <h2>事業紹介</h2>
+                <p>Service</p>
+                <br><p>弊社は伝統工芸に特化し、以下のマーケティング・サポート事業、自社EC運営事業、新ブランド立ち上げ事業を行っております。</p>
             </div>
             <!-- /.about-attempt-tex -->
 
             <!-- ここに画像と事業名を書く。flexでまとめて、コピペでよし。 -->
             <div class="container">
                 <div class="business-item">
+                    <a href="./brand.html">
                     <img src="./image/伝統工芸フリー.jpg" alt="マーケティング・サポート事業">
                     <p>マーケティング・サポート事業</p>
+                    </a>
                 </div>
                 <div class="business-item">
+                    <a href="./brand.html">
                     <img src="./image/伝統工芸フリー.jpg" alt="自社EC運営事業">
                     <p>自社EC運営事業</p>
+                </a>
                 </div>
                 <div class="business-item">
                     <a href="./brand.html">
@@ -90,10 +134,6 @@
                     </a>
                     </div>
                 </div>
-                <!-- <div class="business-item">
-                    <img src="./image/伝統工芸フリー.jpg" alt="サポーター派遣事業">
-                    <p>サポーター派遣事業</p>
-                </div> -->
             </div>
 
             <!-- <div class="container_btn_tex">
@@ -105,25 +145,82 @@
         </div>
         <!-- /.about_attempt -->
 
-        <div class="about_thought_tex">
-            <h3>WTSの思い</h3>
-            <hr color="red">
+        <div class="about-thought-wrap">
+            <div class="about_thought_tex">
+                <img src="./image/icons8-正社員の職-80.png" alt="WTSの思い">
+                <h2>企業理念</h2>
+                <p>philosophy</p>
+            </div>
+            <!-- /.about_thought_tex -->
+            <div class="about_thought">
+                    <div class="thought-item">MISSION<br>「日本の伝統工芸を再生し、<br>現代の生活に取り入れる」</div>
+                    <div class="thought-item">VISION<br>「職人に寄り添い、共に創る」</div>
+                    <div class="thought-item">VALUE<br>「Z世代と職人の橋渡し」</div>
+            </div>
         </div>
-        <!-- /.about_thought_tex -->
-        <div class="about_thought">
-                <div class="thought-item">MISSION<br>「日本の伝統工芸を再生し、<br class="sp_br">現代の生活に取り入れる」</div>
-                <div class="thought-item">VISION<br>「職人に寄り添い、共に創る」</div>
-                <div class="thought-item">VALUE<br>「Z世代と職人の橋渡し」</div>
-        </div>
-    </main>
+        <!-- /.about-thought-wrap -->
+         <div class="about-message-wrap">
+            <div class="about-message-ttl">
+                    <img src="./image/icons8-chat-message-50.png" alt="メッセージ">
+                    <h2>メッセージ</h2>
+                    <p>Message</p>
+            </div>
+            <!-- /.about-message-ttl -->
 
+            <div class="about-message">
+                <div class="about-item">
+                    <a href="./message.html">
+                        <img src="./image/IMG_8151.jpg" alt="代表取締役">
+                        <h3>代表取締役 大富貴稀</h3>
+                    </a>
+                </div>
+                <!-- /.about-flex1 -->
+                 <div class="about-item">
+                    <a href="./message.html">
+                        <img src="./image/IMG_8151.jpg" alt="パートナー">
+                        <h3>パートナー 小松 瑚舶</h3>
+                    </a>
+                 </div>
+                 <!-- /.about-flex2 -->
+            </div>
+        </div>
+         <!-- /.about-message-wrap -->
+
+
+         
+    </main>
     <footer>
         <div class="contact-page">
-            <p style="text-align: center; margin: 40px auto; font-size: 30px;">
-                お問い合わせ
-            </p>
-            <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTQnwSr2o3q5AFNsw1Y7Tzlk1FTFFt9tGanOyjTrZmCfvyow/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;"
-            >
+            <img src="./image/icons8-email-50.png" alt="お問い合わせ">
+            <div class="contact-page-top">
+                <h2>お問い合わせ</h2>
+                <p>contact</p>
+            </div>
+            <!-- /.contact-page-top -->
+
+            <div class="contact_flex">
+                <div class="contact_flex1">
+                    <h3>お電話でのお問い合わせ</h3>
+                    <br>
+                    <a href="tel:08056273879">080-5627-3879</a>
+                    <br><br>
+                    <h3>メールアドレスでのお問い合わせ</h3>
+                    <br>
+                    <a href="mall:wtstradiorer@gmail.com">wtstradiorer@gmail.com</a>
+                </div>
+                <!-- /.contact_flex1 -->
+
+
+                <div class="contact_flex2">
+                    <h3>お問い合わせフォーム</h3>
+                    <br>
+                    <a href="./wts-inquiry.html" class="contact-button">お問い合わせフォームへ →</a>
+                </div>
+                <!-- /.contact_flex2 -->
+
+            </div>
+            <!-- /.contact_flex -->
+            <!-- <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfTQnwSr2o3q5AFNsw1Y7Tzlk1FTFFt9tGanOyjTrZmCfvyow/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
                 <div class="c-form__item">
                     <label class="c-form__label" for="field-name"
                         >お名前<span class="c-form__required">必須</span></label
@@ -176,16 +273,21 @@
                 <div class="c-form__submit">
                     <button type="submit">送信する</button>
                 </div>
-            </form>
+            </form> -->
 
-            <!-- コピーライト -->
-             <p style="text-align: center; font-size: 15px; margin: 2%;">Copyright &copy; WTS INC. All rights reserved.</p>
 
             </div>
+
+             <!-- コピーライト -->
+            <p style="text-align: center; font-size: 15px; margin: 2%;">Copyright &copy; WTS INC. All rights reserved.</p>
             <!-- // お問い合わせ -->
             <script type="text/javascript">var submitted = false;</script>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thank.html';}"></iframe>
     </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script trpe="text/javascript" src="./js/slick.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
